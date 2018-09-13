@@ -3,7 +3,7 @@ FROM alpine:3.8
 # install packages
 RUN apk add --no-cache curl php php-common php-curl php-phar php-mbstring \
 php-pcntl php-shmop php-sysvshm php-opcache php php-json php-openssl \
-php-tokenizer openssl
+php-tokenizer php-posix openssl
 
 # Install Composer
 RUN curl https://getcomposer.org/composer.phar > /usr/sbin/composer && chmod +x /usr/sbin/composer
