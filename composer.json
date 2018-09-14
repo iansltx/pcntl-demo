@@ -1,5 +1,6 @@
 {
     "require": {
-        "symfony/process": "^4.1"
+        "symfony/process": "^4.1",
+        "amphp/parallel": "^0.2.5"
     }
 }

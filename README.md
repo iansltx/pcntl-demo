@@ -43,3 +43,11 @@ docker run --rm -it pcntl
 ```
 
 If you'd rather mount your local directory instead of needing to rebuild every time you change a file, [use the -v option in your docker run command](https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v---read-only).
+
+### Building the pthreads Docker container
+
+If you'd like to build the pthreads Docker container, which also runs psysh, you can specify its Dockerfile rather than the primary one when calling `docker build`:
+
+```bash
+docker build . -f Dockerfile-pthreads -t pthreads
+````

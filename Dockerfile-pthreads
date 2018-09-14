@@ -1,0 +1,21 @@
+FROM php:7.2-zts-alpine
+
+# Install packages
+RUN apk add --no-cache git && \
+    git clone https://github.com/krakjoe/pthreads /tmp/pthreads && \
+    docker-php-ext-configure /tmp/pthreads --enable-pthreads && \
+    docker-php-ext-install /tmp/pthreads
+
+# Install Composer
+RUN curl https://getcomposer.org/composer.phar > /usr/sbin/composer && chmod +x /usr/sbin/composer
+RUN composer g require psy/psysh
+
+# set up app; order of operations optimized for maximum layer reuse
+RUN mkdir /var/app
+WORKDIR /var/app
+CMD /root/.composer/vendor/bin/psysh
+
+COPY composer.lock /var/app/composer.lock
+COPY composer.json /var/app/composer.json
+RUN composer install --prefer-dist -o
+COPY . /var/app
