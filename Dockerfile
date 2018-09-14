@@ -2,7 +2,7 @@ FROM alpine:3.8
 
 # install packages
 RUN apk add --no-cache curl php php-common php-curl php-phar php-mbstring \
-php-pcntl php-shmop php-sysvshm php-opcache php php-json php-openssl \
+php-pcntl php-shmop php-sysvmsg php-opcache php php-json php-openssl \
 php-tokenizer php-posix openssl
 
 # Install Composer
