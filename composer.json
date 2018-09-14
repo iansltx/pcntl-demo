@@ -4,6 +4,6 @@
         "amphp/parallel": "^0.2.5"
     },
     "autoload": {
-        "classmap": ["BlockingTask.php"]
+        "files": ["BlockingTask.php"]
     }
 }
