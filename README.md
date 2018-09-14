@@ -46,7 +46,7 @@ If you'd rather mount your local directory instead of needing to rebuild every t
 
 ### Building the pthreads Docker container
 
-If you'd like to build the pthreads Docker container, which also runs psysh, you can specify its Dockerfile rather than the primary one when calling `docker build`:
+If you'd like to build the pthreads Docker container (e.g. to run threadedCall.php), which also runs psysh by default, you can specify its Dockerfile rather than the primary one when calling `docker build`:
 
 ```bash
 docker build . -f Dockerfile-pthreads -t pthreads
